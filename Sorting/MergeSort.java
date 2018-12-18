@@ -26,7 +26,7 @@ public class MergeSort {
     int[] narr = new int[left.length + right.length];
     int l = 0, r = 0, n = 0;
     while (l!=left.length && r!=right.length) {
-      if (left[l] < right[r]) {
+      if (left[l] <= right[r]) {  // <= for stable sort
         narr[n++] = left[l++];
       }
       else {
