@@ -80,14 +80,15 @@ public class Hashtable <K, V> {
 
     void rehash(){
         cap += 100;
+        Hnode[] saveData = data;
         Hnode[] newData = new Hnode[cap];
-        for (int k=0; k<newData.length; k++) {
-            if (k<data.length)
-                newData[k] = data[k];
-            else
-                newData[k] = null;
-        }
-        data = null;
         data = newData;
+        for (int k=0; k<saveData.length; k++) {
+            Hnode node = saveData[k];
+            while (node!=null) {
+                this.put((K)node.key, (V)node.value);
+                node = node.next;
+            }
+        }
     }
 }

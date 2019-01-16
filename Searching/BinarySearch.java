@@ -1,4 +1,4 @@
-// binary search on sorted array of integers (compare method can be modified for different data types)
+// binary search on sorted array of integers
 import java.util.*;
 
 public class BinarySearch<E extends Object> implements Comparator<Object>{
@@ -10,7 +10,7 @@ public class BinarySearch<E extends Object> implements Comparator<Object>{
     }
 
     static int bsearch(int[] arr, int l, int r, int x) {
-        if (r>0 && l<arr.length) {
+        if (r>=0 && l<arr.length) {
             int med = (l+r)/2;
             int comp = new BinarySearch().compare(x, arr[med]);
             switch(comp) {
@@ -26,6 +26,7 @@ public class BinarySearch<E extends Object> implements Comparator<Object>{
         return -1;
     }
 
+    // method can be modified for different data types
     @Override
     public int compare(Object x, Object y) {
         if(x instanceof Integer && y instanceof Integer) {
