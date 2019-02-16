@@ -8,7 +8,7 @@ public class Dijkstra {
     private Hashtable<Integer, Node> Q; // unvisited vertices
 
     public Dijkstra() {
-
+        
     }
 
     // the shortest paths finder
